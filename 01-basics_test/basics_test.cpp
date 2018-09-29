@@ -20,3 +20,8 @@ TEST_CASE("Test Multiply Numbers", "Products 4,25,100")
 	REQUIRE(multiply_numbers(5, 5) == 25);
 	REQUIRE(multiply_numbers(10, 10) == 100);
 }
+
+TEST_CASE("Test pass by val and ref", "") 
+{
+
+}
