@@ -12,8 +12,8 @@ int multiply_numbers(int num1, int num2)
 	return num1 *  num2;
 }
 
-void pass_by_val_by_ref(int val, int& ref)
+void pass_by_val_by_ref(int val, int ref)
 {
-	val = 99;
+	val = 0;
 	ref = 99;
 }
