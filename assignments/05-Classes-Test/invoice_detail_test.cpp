@@ -1,6 +1,8 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "invoice.h"
+#include "invoice_detail.h"
+#include "invoice_utility.h"
 
 TEST_CASE("TEST config")
 {
@@ -17,4 +19,13 @@ TEST_CASE("Test invoice get total")
 	invoice.add_invoice_detail(InvoiceDetail(100, 3));
 
 	REQUIRE(invoice.get_total() == 325)
+}
+
+TEST_CASE("Test InvoiceUtility get total")
+{
+	InvoiceUtility inv(25);
+	inv.add_invoice_detail(InvoiceDetail(100, 1));
+
+	REQUIRE(inv.get_total() == 125);
+
 }

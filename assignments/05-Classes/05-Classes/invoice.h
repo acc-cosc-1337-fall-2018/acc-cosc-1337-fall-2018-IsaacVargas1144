@@ -1,6 +1,6 @@
 #ifndef INVOICE_H
 #define INVOICE_H
-#include "Invoice Detail.h"
+#include "invoice_detail.h"
 class Invoice
 {
 public:
