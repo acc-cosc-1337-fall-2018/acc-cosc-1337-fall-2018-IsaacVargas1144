@@ -3,6 +3,10 @@
 
 int get_point_mutations(std::string dna1, std::string dna2)
 {	//write the function code 
+	if (std::string(dna1) != std::string(dna2));
+		return -1;
+	else 
+	
 	
 	return 0;
 }
