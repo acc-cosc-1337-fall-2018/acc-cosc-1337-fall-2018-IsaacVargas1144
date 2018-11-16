@@ -1,7 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "dna.h"
-#include "dna.cpp"
 
 TEST_CASE("Test round with precision")
 {
@@ -13,29 +12,49 @@ TEST_CASE("Test round with precision")
 TEST_CASE("Test get point mutations", "Dna strings ") {
 	//test not equal in length return value of -1
 	REQUIRE(get_point_mutations("GAGCCTACTAACGGGAT", "CATCGTAATGACGG") == -1);
+
 	REQUIRE(get_point_mutations("GAGCCTACTAACGGGAT", "GAGCCTACTAACGGGAT") == 0);
 	REQUIRE(get_point_mutations("GAGCCTACTAACGGGAT", "GATCGTAATGACGGCAT") == 5);
 	REQUIRE(get_point_mutations("GAGCCTACTAACGGGAT", "CATCGTAATGACGGCCT") == 7);
 }
 
-TEST_CASE("Test get DNA compliment") 
+/*
+Create a test case for std::string get_dna_complement(std::string dna_string)
+with arguments:
+AAAACCCGGT result should be ACCGGGTTTT
+CCCGGAAAAT result should be ATTTTCCGGG
+*/
+
+TEST_CASE("Test get dna complement")
 {
 	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
 	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
 }
 
-
-
-TEST_CASE("Test for Transcribe DNA into RNA")
+TEST_CASE("TEST Reverse string")
 {
-	REQUIRE(transcribe_dna_into_rna("GATGGAACTTGACTACGTAAATT") == "GAUGGAACUUGACUACGUAAAUU");
-	REQUIRE(transcribe_dna_into_rna("AAATTGATCTTGACTACGTGGAA") == "AAAUUGAUCUUGACUACGUGGAA");
-
+	REQUIRE(reverse_string("1234") == "4321");
+	REQUIRE(reverse_string("GAGCCTACTAACGGGAT") == "TAGGGCAATCATCCGAG");
 }
 
 
-TEST_CASE("Test For Get GC Content")
+/*
+Create a test case for transrcribe_dna_into_rna with arguments:
+GATGGAACTTGACTACGTAAATT result should be GAUGGAACUUGACUACGUAAAUU
+AAATTGATCTTGACTACGTGGAA result should be AAAUUGAUCUUGACUACGUGGAA
+
+*/
+TEST_CASE("Test trasncribe dna into rna")
+{
+	REQUIRE(transcribe_dna_into_rna("GATGGAACTTGACTACGTAAATT") == "GAUGGAACUUGACUACGUAAAUU");
+	REQUIRE(transcribe_dna_into_rna("AAATTGATCTTGACTACGTGGAA") == "AAAUUGAUCUUGACUACGUGGAA");
+}
+
+
+/*create a test case for function get_gc_content with arguments
+CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT
+the result should be 60.92*/
+TEST_CASE("Test get gc content")
 {
 	REQUIRE(get_gc_content("CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT") == 60.92);
-
 }

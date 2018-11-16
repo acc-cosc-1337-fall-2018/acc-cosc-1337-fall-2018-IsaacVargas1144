@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  Catch v2.2.2
  *  Generated: 2018-04-06 12:05:03.186665
  *  ----------------------------------------------------------
@@ -11852,7 +11852,7 @@ namespace Catch {
 				case Unit::Nanoseconds:
 					return "ns";
 				case Unit::Microseconds:
-					return "�s";
+					return "µs";
 				case Unit::Milliseconds:
 					return "ms";
 				case Unit::Seconds:
@@ -13107,5 +13107,3 @@ using Catch::Detail::Approx;
 // end catch_reenable_warnings.h
 // end catch.hpp
 #endif // TWOBLUECUBES_SINGLE_INCLUDE_CATCH_HPP_INCLUDED
-
-
